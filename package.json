@@ -1,0 +1,20 @@
+{
+  "name": "codemaker",
+  "version": "1.0.0",
+  "description": "Trabalho com os alunos de ADS 4 semestre.",
+  "homepage": "https://github.com/Jonathas-Lopes/CodeMaker#readme",
+  "bugs": {
+    "url": "https://github.com/Jonathas-Lopes/CodeMaker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonathas-Lopes/CodeMaker.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  }
+}
