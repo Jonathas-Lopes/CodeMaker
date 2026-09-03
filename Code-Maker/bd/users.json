@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nome": "Ana Clara Souza",
+    "email": "ana.souza@email.com",
+    "perfil": "Administrador",
+    "status": "ativo"
+  },
+  {
+    "id": 2,
+    "nome": "Bruno Ribeiro Mendes",
+    "email": "bruno.mendes@email.com",
+    "perfil": "Docente",
+    "status": "ativo"
+  },
+  {
+    "id": 3,
+    "nome": "Carla Peixoto",
+    "email": "carla.p@email.com",
+    "perfil": "Estudante",
+    "status": "inativo"
+  },
+  {
+    "id": 4,
+    "nome": "Diego Martins",
+    "email": "diego.m@email.com",
+    "perfil": "Estudante",
+    "status": "bloqueado"
+  }
+]
