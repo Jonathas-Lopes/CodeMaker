@@ -1,0 +1,13 @@
+[
+{
+    "id": 1,
+    "nome": "Notebook Gamer",
+    "descricao": "Notebook Gamer com processador Intel Core i7, 16GB de RAM, placa de vídeo NVIDIA GeForce RTX 3060 e SSD de 512GB.",
+    "preco": 4999.99,
+    "categoria":,
+    "marca":,
+    "fabricante":,
+    "estoque":,
+    "imagem": "notebook_gamer.jpg"
+}
+]
