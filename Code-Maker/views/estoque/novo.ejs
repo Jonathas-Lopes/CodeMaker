@@ -6,33 +6,28 @@
 </head>
 
 <body>
-
     <h1>Cadastrar Produto</h1>
 
     <form action="/estoque/salvar" method="POST">
-
         <label>Produto:</label>
-        <input type="text" name="produto">
+        <input type="text" name="produto" maxlength="100" required>
 
         <br><br>
 
         <label>Variação:</label>
-        <input type="text" name="variacao">
+        <input type="text" name="variacao" maxlength="100" required>
 
         <br><br>
 
         <label>Quantidade:</label>
-        <input type="number" name="quantidade">
+        <input type="number" name="quantidade" min="0" step="1" required>
 
         <br><br>
 
         <button type="submit">Cadastrar</button>
-
     </form>
 
     <br>
-
     <a href="/estoque">Voltar para o estoque</a>
-
 </body>
 </html>

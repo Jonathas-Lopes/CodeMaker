@@ -1,20 +1,20 @@
 [
-    {
-        "id": 1,
-        "produto":
-        "variacao":
-        "quantidade": 10
-    },
-    {
-        "id": 2,
-        "produto":
-        "variacao":
-        "quantidade": 5
-    },
-    {
-        "id": 3,
-        "produto":
-        "variacao":
-        "quantidade": 7
-    }
+  {
+    "id": 1,
+    "produto": "Produto 1",
+    "variacao": "Variação 1",
+    "quantidade": 10
+  },
+  {
+    "id": 2,
+    "produto": "Produto 2",
+    "variacao": "Variação 2",
+    "quantidade": 5
+  },
+  {
+    "id": 3,
+    "produto": "Produto 3",
+    "variacao": "Variação 3",
+    "quantidade": 7
+  }
 ]
