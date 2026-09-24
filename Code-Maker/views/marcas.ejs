@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marcas e Fabricantes</title>
+  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'>
+  
+</head>
+<body>
+  <h1>Lista de Marcas e Fabricantes</h1>
+  
+  <ul class="list-group">
+    <% marcas.forEach(function(marca) { %>
+      <li class="list-group-item">ID: <%= marca.id %> - Nome: <%= marca.nome %></li>
+    <% }); %>
+  </ul>
+
+  <br>
+  <a href="/">Voltar para a página inicial</a>
+  <script src='/bootstrap/js/bootstrap.min.js'></script>
+</body>
+</html>
