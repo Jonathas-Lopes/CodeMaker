@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "pedidoId": "Pedido-1",
+    "produto": "Notebook Gamer 15\"",
+    "quantidade": 1,
+    "subtotal": 4599.9
+  },
+  {
+    "id": 2,
+    "pedidoId": "Pedido-1",
+    "produto": "Mouse sem fio",
+    "quantidade": 2,
+    "subtotal": 179.8
+  },
+  {
+    "id": 3,
+    "pedidoId": "Pedido-2",
+    "produto": "Teclado mecânico",
+    "quantidade": 1,
+    "subtotal": 349.9
+  },
+  {
+    "id": 4,
+    "pedidoId": "Pedido-3",
+    "produto": "Fone de Ouvido",
+    "quantidade": 1,
+    "subtotal": 109.9
+  }
+]
