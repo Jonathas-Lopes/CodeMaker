@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "pergunta": "Como acompanho meu pedido?",
+    "resposta": "Você pode acompanhar o pedido pela área de pedidos.",
+    "categoria": "Pedidos"
+  },
+  {
+    "id": 2,
+    "pergunta": "Como faço uma devolução?",
+    "resposta": "Entre em contato com o suporte informando o número do pedido.",
+    "categoria": "Devoluções"
+  },
+  {
+    "id": 5,
+    "pergunta": "qual o prazo da minha entrega?",
+    "resposta": "amanha chega ai rapaz",
+    "categoria": "Entrega"
+  }
+]

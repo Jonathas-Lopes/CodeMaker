@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar dúvida</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        form {
+            background-color: white;
+            padding: 25px;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Adicionar dúvida</h1>
+
+    <form method="POST" action="/faq/inserir">
+
+        <label>Pergunta:</label>
+        <input type="text" name="pergunta" required>
+
+        <label>Resposta:</label>
+        <textarea name="resposta" required></textarea>
+
+        <label>Categoria:</label>
+
+        <select name="categoria" required>
+            <option value="Pedidos">Pedidos</option>
+            <option value="Pagamento">Pagamento</option>
+            <option value="Entrega">Entrega</option>
+            <option value="Trocas">Trocas</option>
+            <option value="Devoluções">Devoluções</option>
+            <option value="Outros">Outros</option>
+        </select>
+
+        <button type="submit">
+            Cadastrar dúvida
+        </button>
+
+    </form>
+
+    <a href="/faq">Voltar para FAQ</a>
+
+</body>
+
+</html>

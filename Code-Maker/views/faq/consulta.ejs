@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Central de Dúvidas</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .faq {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .categoria {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Central de Dúvidas - FAQ</h1>
+    
+    <a href="/faq/inserir">
+    Adicionar nova dúvida
+</a>
+
+<br><br>
+
+<a href="/faq/excluir">
+    Excluir dúvida
+</a>
+
+<br><br>
+
+    <% faqs.forEach(faq => { %>
+
+        <div class="faq">
+
+            <h3>
+                <%= faq.pergunta %>
+            </h3>
+
+            <p>
+                <%= faq.resposta %>
+            </p>
+
+            <p class="categoria">
+                Categoria: <%= faq.categoria %>
+            </p>
+
+        </div>
+
+    <% }) %>
+
+</body>
+
+</html>

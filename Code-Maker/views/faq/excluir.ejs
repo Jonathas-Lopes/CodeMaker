@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir dúvidas</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        .faq {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Excluir dúvidas</h1>
+
+    <a href="/faq">
+        Voltar para FAQ
+    </a>
+
+    <% if (faqs.length === 0) { %>
+
+        <p>Nenhuma dúvida cadastrada.</p>
+
+    <% } %>
+
+    <% faqs.forEach(faq => { %>
+
+        <div class="faq">
+
+            <h3>
+                <%= faq.pergunta %>
+            </h3>
+
+            <p>
+                <%= faq.resposta %>
+            </p>
+
+            <p>
+                Categoria: <%= faq.categoria %>
+            </p>
+
+            <form
+                method="POST"
+                action="/faq/excluir/<%= faq.id %>"
+            >
+
+                <button type="submit">
+                    Excluir
+                </button>
+
+            </form>
+
+        </div>
+
+    <% }) %>
+
+</body>
+
+</html>
