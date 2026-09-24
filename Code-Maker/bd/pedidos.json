@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "fornecedor": "Pichal",
+    "produto": "Notebook Gamer 15\\\"",
+    "quantidade": 1,
+    "valorTotal": 4599.9
+  },
+  {
+    "id": 1,
+    "fornecedor": "Pichal",
+    "produto": "Mouse sem fio\\\"",
+    "quantidade": 2,
+    "valorTotal": 179.8
+  },
+  {
+    "id": 2,
+    "fornecedor": "",
+    "produto": "Disjuntor Bipolar 20A",
+    "quantidade": 20,
+    "valorTotal": 420.00
+  },
+  {
+    "id": 3,
+    "fornecedor": "Materiais Elétricos SP",
+    "produto": "Tomada 10A",
+    "quantidade": 50,
+    "valorTotal": 375.00
+  }
+]

@@ -1,6 +1,6 @@
 {
 <<<<<<< HEAD
-  "name": "teste",
+  "name": "pedidos de compras",
   "version": "0.0.0",
   "private": true,
   "description": "",
@@ -9,7 +9,7 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "start": "node --watch ./bin/www"
+    "start": "node --index.js ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
