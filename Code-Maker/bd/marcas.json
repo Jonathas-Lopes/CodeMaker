@@ -1,18 +1,26 @@
 [
   {
     "id": 1,
-    "nome": "Nike"
+    "nome": "Nike",
+    "fabricante": "Nike, Inc.",
+    "imagem": "/images/marcas/nike.jpg"
   },
   {
     "id": 2,
-    "nome": "Adidas"
+    "nome": "Adidas",
+    "fabricante": "Adidas AG",
+    "imagem": "/images/marcas/adidas.jpg"
   },
   {
     "id": 3,
-    "nome": "Samsung"
+    "nome": "Samsung",
+    "fabricante": "Samsung Electronics",
+    "imagem": "/images/marcas/samsung.jpg"
   },
   {
     "id": 4,
-    "nome": "Apple"
+    "nome": "Apple",
+    "fabricante": "Apple Inc.",
+    "imagem": "/images/marcas/apple.jpg"
   }
 ]

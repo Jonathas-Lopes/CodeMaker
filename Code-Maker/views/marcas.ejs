@@ -3,19 +3,40 @@
 <head>
   <title>Marcas e Fabricantes</title>
   <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'>
-  
 </head>
-<body>
-  <h1>Lista de Marcas e Fabricantes</h1>
+<body class="container mt-4">
+  <h1 class="mb-4">Lista de Marcas e Fabricantes</h1>
   
-  <ul class="list-group">
-    <% marcas.forEach(function(marca) { %>
-      <li class="list-group-item">ID: <%= marca.id %> - Nome: <%= marca.nome %></li>
-    <% }); %>
-  </ul>
+  <table class="table table-striped table-bordered align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Imagem</th>
+        <th>Nome</th>
+        <th>Fabricante</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% marcas.forEach(function(marca) { %>
+        <tr>
+          <td><%= marca.id %></td>
+          <td>
+            <img src="<%= marca.imagem %>" alt="<%= marca.nome %>" width="70" height="50" style="object-fit: contain;">
+          </td>
+          <td><%= marca.nome %></td>
+          <td><%= marca.fabricante %></td>
+          <td>
+            <a href="/marcas/editar/<%= marca.id %>" class="btn btn-sm btn-primary">Editar</a>
+            <a href="/marcas/excluir/<%= marca.id %>" class="btn btn-sm btn-danger">Excluir</a>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
   <br>
-  <a href="/">Voltar para a página inicial</a>
+  <a href="/" class="btn btn-secondary">Voltar para a página inicial</a>
   <script src='/bootstrap/js/bootstrap.min.js'></script>
 </body>
 </html>
