@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const categoriaController = require('../controller/categoriaontroller.js');
+const categoriasController = require('../controller/categoriasController.js');
 
-router.get('/', categoriaController.getCategorias);
+router.get('/', categoriasController.getCategorias);
 
 module.exports = router;

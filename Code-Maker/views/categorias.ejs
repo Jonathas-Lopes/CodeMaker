@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categorias</title>
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+    
+
+    <div class="container py-4">
+
+        <h1>Categorias</h1>
+
+        <ul class="list-group">
+
+            <% categorias.forEach(categoria => { %>
+
+                <li class="list-group-item">
+                  <li class="list-group-item">
+
+    <img src="/images/categorias/<%= categoria.imagem %>" 
+         alt="<%= categoria.nome %>"
+         width="100">
+
+    <%= categoria.nome %>
+
+</li>
+                </li>
+
+            <% }); %>
+
+        </ul>
+
+    </div>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+</body>
+
+</html>

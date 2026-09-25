@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nome": "Shampoo",
+    "foto": "/images/shampoo.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Televisao",
+    "foto": "/images/tv.jpg"
+  },
+  {
+    "id": 3,
+    "nome": "Notebook",
+    "foto": "/images/notebook.jpg"
+  },
+  {
+    "id": 4,
+    "nome": "Videogame",
+    "foto": "/images/videogame.jpg"
+  }
+]
