@@ -1,85 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Excluir dúvidas</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 30px;
-        }
-
-        .faq {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-
-        button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        a {
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excluir dúvidas | CodeMaker</title>
+<%- include('estilos') %>
 </head>
-
 <body>
-
-    <h1>Excluir dúvidas</h1>
-
-    <a href="/faq">
-        Voltar para FAQ
-    </a>
-
-    <% if (faqs.length === 0) { %>
-
-        <p>Nenhuma dúvida cadastrada.</p>
-
-    <% } %>
-
-    <% faqs.forEach(faq => { %>
-
-        <div class="faq">
-
-            <h3>
-                <%= faq.pergunta %>
-            </h3>
-
-            <p>
-                <%= faq.resposta %>
-            </p>
-
-            <p>
-                Categoria: <%= faq.categoria %>
-            </p>
-
-            <form
-                method="POST"
-                action="/faq/excluir/<%= faq.id %>"
-            >
-
-                <button type="submit">
-                    Excluir
-                </button>
-
-            </form>
-
-        </div>
-
-    <% }) %>
-
+<%- include('cabecalho', { pagina: 'excluir' }) %>
+<main>
+<a class="back" href="/faq">← Voltar para as dúvidas</a>
+<section class="hero">
+<div>
+<p class="eyebrow">Organize a central</p>
+<h1>
+<%= selecionada ? 'Confirmar exclusão' : 'Mantenha as respostas em dia.' %>
+</h1>
+<p class="intro">
+<%= selecionada ? 'Confira a dúvida selecionada antes de continuar.' : 'Remova dúvidas que não são mais úteis. Você poderá revisar cada item antes de confirmar.' %>
+</p>
+</div>
+</section>
+<% if (sucesso) { %>
+<div class="notice" role="status">Dúvida excluída com sucesso.</div>
+<% } %>
+<% if (erro) { %>
+<div class="notice error" role="alert">
+<%= erro %>
+</div>
+<% } %>
+<% if (selecionada) { %>
+<section class="panel confirm">
+<span class="tag">
+<%= selecionada.categoria %>
+</span>
+<h2>
+<%= selecionada.pergunta %>
+</h2>
+<p class="answer">
+<%= selecionada.resposta %>
+</p>
+<div class="notice error">Esta ação remove a pergunta e a resposta da central e não pode ser desfeita.</div>
+<form method="POST" action="/faq/excluir/<%= selecionada.id %>">
+<input type="hidden" name="confirmacao" value="sim">
+<div class="actions">
+<a class="button secondary" href="/faq/excluir">Cancelar e voltar</a>
+<button class="button danger" type="submit">Sim, excluir dúvida</button>
+</div>
+</form>
+</section>
+<% } else { %>
+<div class="toolbar">
+<strong>
+<%= faqs.length %> <%= faqs.length === 1 ? 'dúvida cadastrada' : 'dúvidas cadastradas' %>
+</strong>
+<span>Selecione a dúvida que deseja remover</span>
+</div>
+<% if (!faqs.length) { %>
+<section class="panel empty">
+<h2>Nenhuma dúvida para excluir</h2>
+<p>Novas perguntas aparecerão aqui depois do cadastro.</p>
+<a class="button" href="/faq/inserir">Cadastrar dúvida</a>
+</section>
+<% } %>
+<div class="grid">
+<% faqs.forEach(faq => { %>
+<article class="card">
+<span class="tag">
+<%= faq.categoria %>
+</span>
+<h2>
+<%= faq.pergunta %>
+</h2>
+<p class="answer">
+<%= faq.resposta %>
+</p>
+<div class="card-bottom">
+<a class="delete-link" href="/faq/excluir?id=<%= faq.id %>">Excluir esta dúvida<span class="hint">
+<%= faq.pergunta %>
+</span>
+</a>
+</div>
+</article>
+<% }) %>
+</div>
+<% } %>
+</main>
+<footer>CodeMaker · Central de dúvidas</footer>
 </body>
-
 </html>

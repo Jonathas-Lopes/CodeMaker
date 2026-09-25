@@ -1,71 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Central de Dúvidas</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 30px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .faq {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-
-        .categoria {
-            color: #777;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central de dúvidas | CodeMaker</title>
+<%- include('estilos') %>
 </head>
-
 <body>
-
-    <h1>Central de Dúvidas - FAQ</h1>
-    
-    <a href="/faq/inserir">
-    Adicionar nova dúvida
-</a>
-
-<br><br>
-
-<a href="/faq/excluir">
-    Excluir dúvida
-</a>
-
-<br><br>
-
-    <% faqs.forEach(faq => { %>
-
-        <div class="faq">
-
-            <h3>
-                <%= faq.pergunta %>
-            </h3>
-
-            <p>
-                <%= faq.resposta %>
-            </p>
-
-            <p class="categoria">
-                Categoria: <%= faq.categoria %>
-            </p>
-
-        </div>
-
-    <% }) %>
-
+<%- include('cabecalho', { pagina: 'consulta' }) %>
+<main>
+<section class="hero">
+<div>
+<p class="eyebrow">Central de ajuda</p>
+<h1>Dúvidas? Comece por aqui.</h1>
+<p class="intro">Encontre respostas sobre pedidos, pagamentos e entregas. Tudo em um só lugar para facilitar o seu dia.</p>
+</div>
+<a class="button" href="/faq/inserir">+ Nova dúvida</a>
+</section>
+<% if (sucesso) { %>
+<div class="notice" role="status">Dúvida cadastrada com sucesso! Ela já está disponível abaixo.</div>
+<% } %>
+<div class="toolbar">
+<strong>
+<%= faqs.length %> <%= faqs.length === 1 ? 'dúvida cadastrada' : 'dúvidas cadastradas' %>
+</strong>
+<span>Perguntas e respostas</span>
+</div>
+<% if (!faqs.length) { %>
+<section class="panel empty">
+<h2>A central está pronta para começar</h2>
+<p>Cadastre a primeira pergunta e compartilhe uma resposta útil.</p>
+<a class="button" href="/faq/inserir">Cadastrar primeira dúvida</a>
+</section>
+<% } %>
+<div class="grid">
+<% faqs.forEach(faq => { %>
+<article class="card">
+<span class="tag">
+<%= faq.categoria %>
+</span>
+<h2>
+<%= faq.pergunta %>
+</h2>
+<p class="answer">
+<%= faq.resposta %>
+</p>
+</article>
+<% }) %>
+</div>
+</main>
+<footer>CodeMaker · Central de dúvidas</footer>
 </body>
-
 </html>

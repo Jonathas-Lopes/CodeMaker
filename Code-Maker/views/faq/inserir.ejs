@@ -1,82 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Adicionar dúvida</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 30px;
-        }
-
-        form {
-            background-color: white;
-            padding: 25px;
-            max-width: 500px;
-            border-radius: 8px;
-        }
-
-        input,
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 20px;
-        }
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova dúvida | CodeMaker</title>
+<%- include('estilos') %>
 </head>
-
 <body>
-
-    <h1>Adicionar dúvida</h1>
-
-    <form method="POST" action="/faq/inserir">
-
-        <label>Pergunta:</label>
-        <input type="text" name="pergunta" required>
-
-        <label>Resposta:</label>
-        <textarea name="resposta" required></textarea>
-
-        <label>Categoria:</label>
-
-        <select name="categoria" required>
-            <option value="Pedidos">Pedidos</option>
-            <option value="Pagamento">Pagamento</option>
-            <option value="Entrega">Entrega</option>
-            <option value="Trocas">Trocas</option>
-            <option value="Devoluções">Devoluções</option>
-            <option value="Outros">Outros</option>
-        </select>
-
-        <button type="submit">
-            Cadastrar dúvida
-        </button>
-
-    </form>
-
-    <a href="/faq">Voltar para FAQ</a>
-
+<%- include('cabecalho', { pagina: 'inserir' }) %>
+<main>
+<a class="back" href="/faq">← Voltar para as dúvidas</a>
+<section class="hero">
+<div>
+<p class="eyebrow">Compartilhe conhecimento</p>
+<h1>Uma dúvida, uma boa resposta.</h1>
+<p class="intro">Adicione uma pergunta à central para ajudar outras pessoas.</p>
+</div>
+</section>
+<% if (erro) { %>
+<div class="notice error" role="alert">
+<%= erro %>
+</div>
+<% } %>
+<div class="layout">
+<form class="panel" method="POST" action="/faq/inserir">
+<label for="pergunta">Pergunta</label>
+<input id="pergunta" name="pergunta" type="text" required maxlength="200" value="<%= valores.pergunta || '' %>" placeholder="Ex.: Como acompanho meu pedido?" aria-describedby="pergunta-ajuda">
+<small class="hint" id="pergunta-ajuda">Seja direto. Use até 200 caracteres.</small>
+<label for="resposta">Resposta</label>
+<textarea id="resposta" name="resposta" required maxlength="2000" placeholder="Explique como resolver a dúvida, passo a passo." aria-describedby="resposta-ajuda">
+<%= valores.resposta || '' %>
+</textarea>
+<small class="hint" id="resposta-ajuda">Escreva uma orientação clara, com até 2.000 caracteres.</small>
+<label for="categoria">Categoria</label>
+<select id="categoria" name="categoria" required>
+<option value="">Selecione uma categoria</option>
+<% categorias.forEach(categoria => { %>
+<option value="<%= categoria %>" <%= valores.categoria === categoria ? 'selected' : '' %>>
+<%= categoria %>
+</option>
+<% }) %>
+</select>
+<div class="actions">
+<button class="button" type="submit">Cadastrar dúvida</button>
+<a class="button secondary" href="/faq">Cancelar</a>
+</div>
+</form>
+<aside class="aside">
+<p class="eyebrow">Antes de cadastrar</p>
+<h2>Uma resposta que ajuda</h2>
+<p>Confira se a pergunta já aparece na central.</p>
+<p>Use palavras simples e inclua as informações necessárias para resolver a dúvida.</p>
+<p>Todos os campos são obrigatórios. Depois de salvar, você voltará à lista de dúvidas.</p>
+</aside>
+</div>
+</main>
+<footer>CodeMaker · Central de dúvidas</footer>
 </body>
-
 </html>
