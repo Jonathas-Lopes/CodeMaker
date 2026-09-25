@@ -5,3 +5,4 @@ const produtosController = require('../controller/produtosController.js');
 router.get('/', produtosController.getProdutos);
 
 module.exports = router;
+

@@ -1,9 +1,13 @@
-const produtotos = require('../bd/produtos.json');
+const produtos = require('../bd/produtos.json');
 
-function getprodutos(req, res){
-  res.render('produtos', { produtotos });
+function createProduto(req, res){
+  
+    
+
+function getProdutos(req, res){
+  res.render('produtos', { produtos });
 };
 
 module.exports = {
-  getprodutos
-};  
+  getProdutos
+};
