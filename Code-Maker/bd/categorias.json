@@ -2,21 +2,21 @@
   {
     "id": 1,
     "nome": "Shampoo",
-    "foto": "/images/shampoo.jpg"
+    "foto": "/images/categorias/shampoo.jpeg"
   },
   {
     "id": 2,
     "nome": "Televisao",
-    "foto": "/images/tv.jpg"
+    "foto": "/images/categorias/tv.jpeg"
   },
   {
     "id": 3,
     "nome": "Notebook",
-    "foto": "/images/notebook.jpg"
+    "foto": "/images/categorias/notebook.webp"
   },
   {
     "id": 4,
     "nome": "Videogame",
-    "foto": "/images/videogame.jpg"
+    "foto": "/images/categorias/videogame.jpeg"
   }
 ]
