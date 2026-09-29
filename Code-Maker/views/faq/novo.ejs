@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <title>Registar Nova Dúvida</title>
+</head>
+<body>
+    <h1>Inserir Nova Dúvida na FAQ</h1>
+    <form action="/faq/salvar" method="POST">
+        <label>Pergunta:</label><br>
+        <input type="text" name="pergunta" style="width: 300px;" required><br><br>
+        
+        <label>Resposta:</label><br>
+        <textarea name="resposta" rows="4" style="width: 300px;" required></textarea><br><br>
+        
+        <button type="submit">Salvar</button>
+        <a href="/faq"><button type="button">Cancelar</button></a>
+    </form>
+</body>
+</html>

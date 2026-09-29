@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "pergunta": "Como rastrear o meu pedido?",
+    "resposta": "Acesse a aba Meus Pedidos no seu painel de cliente."
+  },
+  {
+    "id": 2,
+    "pergunta": "Qual é o prazo de entrega?",
+    "resposta": "O prazo padrão é de 3 a 5 dias úteis."
+  },
+  {
+    "id": 3,
+    "pergunta": "Como solicito um reembolso?",
+    "resposta": "Entre na seção de Devoluções e abra um ticket de suporte."
+  }
+]
