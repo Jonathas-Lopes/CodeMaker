@@ -8,6 +8,13 @@ function getCategorias(req, res){
 function getNovo(req, res) {
     res.render('novo', {});
 }
+async function postExcluir(req, res) {
+    const id = req.params.id;
+    const indice = categorias.findIndex(categoria => categoria.id == id); 
+    categorias.splice(indice, 1);
+    await fs.promises.writeFile('./bd/categorias.json', JSON.stringify(categorias, null, 2));
+    res.redirect('/categorias');
+}
 async function postSalvar(req, res) {
     const foto = req.body.foto;
     const nome = req.body.nome;
@@ -26,7 +33,9 @@ async function postSalvar(req, res) {
 module.exports = {
   getCategorias,
   getNovo,
-  postSalvar
+  postSalvar,
+  postExcluir
+  
 }; 
 
 
