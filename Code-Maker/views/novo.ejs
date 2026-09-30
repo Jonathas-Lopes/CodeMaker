@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Categoria</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    <div class="container py-4">
+        <h1>Adicionar Nova Categoria</h1>
+        <form action="/categorias/salvar" method="POST" >
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome da Categoria</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Foto da Categoria</label>
+                <input type="text" class="form-control" id="foto" name="foto" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>

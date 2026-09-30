@@ -3,5 +3,7 @@ const router = express.Router();
 const categoriasController = require('../controller/categoriasController.js');
 
 router.get('/', categoriasController.getCategorias);
+router.get('/novo', categoriasController.getNovo);
+router.post('/salvar', categoriasController.postSalvar);
 
 module.exports = router;

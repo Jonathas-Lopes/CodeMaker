@@ -18,5 +18,15 @@
     "id": 4,
     "nome": "Videogame",
     "foto": "/images/categorias/videogame.jpeg"
+  },
+  {
+    "foto": "/images/categorias/leite.jpeg",
+    "nome": "LEITE",
+    "id": 5
+  },
+  {
+    "foto": "/images/categorias/brinquedos.webp",
+    "nome": "brinquedos",
+    "id": 6
   }
 ]
