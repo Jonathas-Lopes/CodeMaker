@@ -1,0 +1,26 @@
+[
+  {
+    "id": 8,
+    "pergunta": "Aonde eu encontro o meu Pedido?",
+    "resposta": "No menu, selecione os 3 pontos,\r\n Em seguida clique em \"Pedidos\".",
+    "categoria": "Pedidos"
+  },
+  {
+    "id": 9,
+    "pergunta": "Como cancelar uma Compra ou reembolsá-la ?",
+    "resposta": "Para cancelar a Compra, \r\n Abra uma solicitação em \"Solicitar Cancelamento/Reembolso\" Na aba\r\nMenu > Solicitações > Solicitar Cancelamento/Reembolso.",
+    "categoria": "Devoluções"
+  },
+  {
+    "id": 10,
+    "pergunta": "Como criar uma Conta ?",
+    "resposta": "Para criar uma conta, \r\n Volte a primeira tela de \"Login\", Vá na opção \"Primeiro Cadastro\" e crie sua conta.",
+    "categoria": "Outros"
+  },
+  {
+    "id": 11,
+    "pergunta": "Seu pedido está atrasado?",
+    "resposta": "Não se preocupe, \r\nse o seu Pedido ultrapassou o tempo de entrega, basta abrir uma solicitação em\r\nMenu > Solicitações > Pedidos atrasados.",
+    "categoria": "Pedidos"
+  }
+]
