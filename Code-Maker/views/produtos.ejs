@@ -11,7 +11,10 @@
 
 <body>
 
-    <div class="container d-flex flex-wrap gap-3 py-4">
+    <div class="container py-4">
+        <h1 class="mb-4">Lista de Produtos</h1>
+        <a href="/produtos/novo" class="btn btn-primary mb-3">+ Novo Produto</a>
+
         <div class="row">
             <% produtos.forEach(produto=> { %>
                 <div class="col-md-4">
@@ -24,6 +27,9 @@
                             <p class="card-text">
                                 <%= produto.descricao %>
                             </p>
+                            <form action="/produtos/excluir/<%= produto.id %>" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</button>
+                            </form>
                         </div>
                     </div>
                 </div>
