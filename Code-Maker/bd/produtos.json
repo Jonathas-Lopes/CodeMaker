@@ -25,11 +25,11 @@
     "id": 3,
     "nome": "COATING SPRAY PARA PINTURA",
     "descricao": "COATING SPRAY PARA PINTURA, proteção por até 12 meses",
-    "preco": 89.90,
-    "categoria":"Automotivo",
-    "marca":"Vonixx",
-    "fabricante":"Vonixx",
-    "estoque":"3",
+    "preco": 89.9,
+    "categoria": "Automotivo",
+    "marca": "Vonixx",
+    "fabricante": "Vonixx",
+    "estoque": "3",
     "foto": "coating_spray.jpg"
   }
 ]
