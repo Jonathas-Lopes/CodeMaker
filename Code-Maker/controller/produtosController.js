@@ -1,68 +1,31 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
+const produtos = require('../bd/produtos.json');
 
-const PRODUTOS_PATH = path.join(__dirname, '..', 'bd', 'produtos.json');
-
-async function lerProdutos() {
-  const data = await fs.readFile(PRODUTOS_PATH, 'utf8');
-  return JSON.parse(data);
-}
-
-async function escreverProdutos(produtos) {
-  await fs.writeFile(PRODUTOS_PATH, JSON.stringify(produtos, null, 2), 'utf8');
-}
-
-async function getProdutos(req, res) {
-  const produtos = await lerProdutos();
+function getProdutos(req, res){
   res.render('produtos', { produtos });
 }
 
-async function novoProduto(req, res) {
+function novoProduto(req, res){
   res.render('produto-novo', { erros: [], valores: {} });
 }
 
-async function createProduto(req, res) {
-  try {
-    const produtos = await lerProdutos();
-    const novoId = produtos.length > 0 ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
-
-    const novoProduto = {
-      id: novoId,
-      nome: req.body.nome,
-      descricao: req.body.descricao,
-      preco: parseFloat(req.body.preco),
-      categoria: req.body.categoria,
-      marca: req.body.marca,
-      fabricante: req.body.fabricante,
-      estoque: parseInt(req.body.estoque),
-      foto: req.body.foto
-    };
-
-    produtos.push(novoProduto);
-    await escreverProdutos(produtos);
-    res.redirect('/produtos');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Erro ao salvar produto');
-  }
+function createProduto(req, res){
+  const p = path.join(__dirname, '..', 'bd', 'produtos.json');
+  const lista = JSON.parse(fs.readFileSync(p, 'utf8'));
+  const novoId = lista.length > 0 ? Math.max(...lista.map(x => x.id)) + 1 : 1;
+  lista.push({ id: novoId, nome: req.body.nome, descricao: req.body.descricao, preco: parseFloat(req.body.preco), categoria: req.body.categoria, marca: req.body.marca, fabricante: req.body.fabricante, estoque: parseInt(req.body.estoque), foto: req.body.foto });
+  fs.writeFileSync(p, JSON.stringify(lista, null, 2));
+  res.redirect('/produtos');
 }
 
-async function deleteProduto(req, res) {
-  try {
-    const id = parseInt(req.params.id);
-    let produtos = await lerProdutos();
-    produtos = produtos.filter(p => p.id !== id);
-    await escreverProdutos(produtos);
-    res.redirect('/produtos');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Erro ao excluir produto');
-  }
+function deleteProduto(req, res){
+  const p = path.join(__dirname, '..', 'bd', 'produtos.json');
+  const lista = JSON.parse(fs.readFileSync(p, 'utf8'));
+  const id = parseInt(req.params.id);
+  const filtrada = lista.filter(x => x.id !== id);
+  fs.writeFileSync(p, JSON.stringify(filtrada, null, 2));
+  res.redirect('/produtos');
 }
 
-module.exports = {
-  getProdutos,
-  novoProduto,
-  createProduto,
-  deleteProduto
-};
+module.exports = { getProdutos, novoProduto, createProduto, deleteProduto };
