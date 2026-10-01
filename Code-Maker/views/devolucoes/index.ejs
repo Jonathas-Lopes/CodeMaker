@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocas e Devoluções</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h3 mb-0">Trocas e Devoluções</h1>
+            <a href="/devolucoes/novo" class="btn btn-primary">Nova solicitação</a>
+        </div>
+
+        <% if (mensagem) { %>
+            <div class="alert alert-<%= mensagem.classe %>" role="alert">
+                <%= mensagem.texto %>
+            </div>
+        <% } %>
+
+        <% if (devolucoes.length === 0) { %>
+            <p class="text-muted">Nenhuma solicitação cadastrada.</p>
+        <% } else { %>
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Pedido</th>
+                            <th>Cliente</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Motivo</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% devolucoes.forEach(devolucao => { %>
+                            <tr>
+                                <td><%= devolucao.id %></td>
+                                <td>#<%= devolucao.pedido %></td>
+                                <td><%= devolucao.cliente %></td>
+                                <td><%= devolucao.produto %></td>
+                                <td><%= devolucao.tipo %></td>
+                                <td><%= devolucao.motivo %></td>
+                                <td><%= devolucao.status %></td>
+                                <td><%= devolucao.data.split('-').reverse().join('/') %></td>
+                                <td>
+                                    <form action="/devolucoes/excluir/<%= devolucao.id %>" method="POST">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Tem certeza que deseja excluir esta solicitação?')">Excluir</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        <% } %>
+    </div>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+
+</html>
