@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "pedido": "PED-2026-001",
+    "cliente": "Mariana Costa",
+    "produto": "Tênis esportivo",
+    "tipo": "Troca",
+    "motivo": "Tamanho menor que o esperado",
+    "status": "Solicitada",
+    "dataSolicitacao": "2026-09-20"
+  },
+  {
+    "id": 2,
+    "pedido": "PED-2026-014",
+    "cliente": "Lucas Ferreira",
+    "produto": "Fone Bluetooth",
+    "tipo": "Devolução",
+    "motivo": "Produto com defeito",
+    "status": "Em análise",
+    "dataSolicitacao": "2026-09-22"
+  },
+  {
+    "id": 3,
+    "pedido": "PED-2026-027",
+    "cliente": "Beatriz Almeida",
+    "produto": "Mochila urbana",
+    "tipo": "Troca",
+    "motivo": "Cor diferente da escolhida",
+    "status": "Aguardando envio",
+    "dataSolicitacao": "2026-09-25"
+  }
+]

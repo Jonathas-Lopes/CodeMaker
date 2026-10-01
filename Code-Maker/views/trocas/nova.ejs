@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nova solicitação | CodeMarket</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <main class="container py-5">
+    <a class="link-secondary text-decoration-none" href="/trocas">&larr; Voltar para solicitações</a>
+    <div class="row justify-content-center mt-3">
+      <div class="col-lg-8 col-xl-7">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 p-md-5">
+            <p class="text-primary fw-semibold mb-1">Pós-venda</p>
+            <h1 class="h2 mb-2">Nova solicitação</h1>
+            <p class="text-secondary mb-4">Informe os dados do pedido e o motivo da troca ou devolução.</p>
+
+            <% if (erro) { %>
+              <div class="alert alert-danger" role="alert"><%= erro %></div>
+            <% } %>
+
+            <form action="/trocas" method="post">
+              <div class="mb-3">
+                <label for="pedido" class="form-label">Número do pedido</label>
+                <input class="form-control" id="pedido" name="pedido" value="<%= valores ? valores.pedido : '' %>" maxlength="40" required>
+              </div>
+              <div class="mb-3">
+                <label for="cliente" class="form-label">Nome do cliente</label>
+                <input class="form-control" id="cliente" name="cliente" value="<%= valores ? valores.cliente : '' %>" maxlength="100" required>
+              </div>
+              <div class="mb-3">
+                <label for="produto" class="form-label">Produto</label>
+                <input class="form-control" id="produto" name="produto" value="<%= valores ? valores.produto : '' %>" maxlength="120" required>
+              </div>
+              <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo de solicitação</label>
+                <select class="form-select" id="tipo" name="tipo" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Troca" <%= valores && valores.tipo === 'Troca' ? 'selected' : '' %>>Troca</option>
+                  <option value="Devolução" <%= valores && valores.tipo === 'Devolução' ? 'selected' : '' %>>Devolução</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="motivo" class="form-label">Motivo</label>
+                <textarea class="form-control" id="motivo" name="motivo" rows="4" maxlength="500" required><%= valores ? valores.motivo : '' %></textarea>
+              </div>
+              <div class="d-flex justify-content-end gap-2">
+                <a class="btn btn-outline-secondary" href="/trocas">Cancelar</a>
+                <button class="btn btn-primary" type="submit">Cadastrar solicitação</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

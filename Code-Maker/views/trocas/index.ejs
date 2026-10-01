@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trocas e devoluções | CodeMarket</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <main class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+      <div>
+        <p class="text-primary fw-semibold mb-1">Pós-venda</p>
+        <h1 class="h2 mb-1">Trocas e devoluções</h1>
+        <p class="text-secondary mb-0">Consulte e gerencie as solicitações dos clientes.</p>
+      </div>
+      <a class="btn btn-primary" href="/trocas/nova">Nova solicitação</a>
+    </div>
+
+    <% if (mensagem) { %>
+      <div class="alert alert-info" role="status"><%= mensagem %></div>
+    <% } %>
+
+    <% if (trocas.length === 0) { %>
+      <div class="alert alert-light border">Ainda não há solicitações cadastradas.</div>
+    <% } else { %>
+      <div class="table-responsive bg-white rounded shadow-sm">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Pedido</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Produto</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Motivo</th>
+              <th scope="col">Status</th>
+              <th scope="col">Solicitada em</th>
+              <th scope="col"><span class="visually-hidden">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% trocas.forEach(troca => { %>
+              <tr>
+                <td><strong><%= troca.pedido %></strong></td>
+                <td><%= troca.cliente %></td>
+                <td><%= troca.produto %></td>
+                <td><span class="badge <%= troca.tipo === 'Troca' ? 'text-bg-primary' : 'text-bg-warning' %>"><%= troca.tipo %></span></td>
+                <td><%= troca.motivo %></td>
+                <td><%= troca.status %></td>
+                <td><%= new Date(`${troca.dataSolicitacao}T00:00:00`).toLocaleDateString('pt-BR') %></td>
+                <td class="text-end">
+                  <form action="/trocas/<%= troca.id %>/excluir" method="post" onsubmit="return confirm('Deseja remover esta solicitação?')">
+                    <button class="btn btn-sm btn-outline-danger" type="submit" aria-label="Remover solicitação do pedido <%= troca.pedido %>">Remover</button>
+                  </form>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>
