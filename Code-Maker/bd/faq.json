@@ -13,5 +13,20 @@
     "id": 3,
     "pergunta": "Como solicito um reembolso?",
     "resposta": "Entre na seção de Devoluções e abra um ticket de suporte."
+  },
+  {
+    "id": 4,
+    "pergunta": "Quais são as formas de pagamento aceitas?",
+    "resposta": "Aceitamos cartões de crédito (em até 12x), Pix com aprovação imediata e boleto bancário."
+  },
+  {
+    "id": 5,
+    "pergunta": "Posso alterar o endereço após fechar o pedido?",
+    "resposta": "O endereço só pode ser alterado se o pedido ainda não tiver sido faturado. Por favor, contacte o suporte imediatamente."
+  },
+  {
+    "id": 6,
+    "pergunta": "Os produtos vendidos possuem garantia?",
+    "resposta": "Sim, todos os produtos possuem a garantia legal de 90 dias contra defeitos de fabricação."
   }
 ]
