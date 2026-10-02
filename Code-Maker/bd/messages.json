@@ -1,0 +1,71 @@
+[ 
+    {
+        "id": 1,
+        "client": "user",
+        "subject": "Olá! Seja bem-vindo(a) ao nosso atendimento. Como posso ajudar você hoje?",
+        "creation_date": "2023-10-01"
+    },
+    
+    {
+        "id": 2,
+        "client": "user",
+        "subject": "Recebemos sua solicitação e já estamos verificando as informações. Em breve retornaremos com uma resposta.",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 3,
+        "client": "user",
+        "subject": "Para localizar seu cadastro, poderia informar seu nome completo e número do pedido, por favor?",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 4,
+        "client": "user",
+        "subject": "Seu pedido foi enviado e está em processo de entrega. Você pode acompanhar o status pelo código de rastreamento informado.",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 5,
+        "client": "user",
+        "subject": "O prazo para entrega é de até 5 dias úteis após a confirmação do pagamento.",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 6,
+        "client": "user",
+        "subject": "Pedimos desculpas pelo inconveniente. Estamos trabalhando para resolver a situação o mais rápido possível.",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 7,
+        "client": "user",
+        "subject": "Sua solicitação foi concluída com sucesso. Há mais alguma coisa em que eu possa ajudar?",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 8,
+        "client": "user",
+        "subject": "Agradecemos seu contato! Como você avalia o atendimento recebido hoje, de 1 a 5?",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 9,
+        "client": "user",
+        "subject": "Identificamos a causa do problema e nossa equipe já realizou a correção. Por favor, teste novamente e nos informe o resultado.",
+        "creation_date": "2023-10-01"
+    },
+
+    {
+        "id": 10,
+        "client": "user",
+        "subject": "Olá, usuário! Obrigado por entrar em contato. Viemos informar que seu agendamento foi confirmado para amanhã às 14h.",
+        "creation_date": "2023-10-01"
+    }
+]
