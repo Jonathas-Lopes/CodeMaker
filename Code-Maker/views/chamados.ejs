@@ -1,0 +1,37 @@
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados</title>
+    <!-- Correto -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container d-flex flex-wrap gap-3 py-4">
+        <div class="row">
+            <% chamados.forEach(chamado=> { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img style="height: 50vh" src="/images/<%= chamado.foto %>" class="card-img-top" alt="<%= chamado.nome %>">
+                        <div class="card-body" style="height: 30%;">
+                            <h5 class="card-title">
+                                <%= chamado.nome %>
+                            </h5>
+                            <p class="card-text">
+                                <%= chamado.perfil %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+
+</html>
