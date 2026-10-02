@@ -1,37 +1,79 @@
-
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamados</title>
-    <!-- Correto -->
+
+    <title>Chamados de Suporte</title>
+
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
 </head>
 
 <body>
 
-    <div class="container d-flex flex-wrap gap-3 py-4">
-        <div class="row">
-            <% chamados.forEach(chamado=> { %>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img style="height: 50vh" src="/images/<%= chamado.foto %>" class="card-img-top" alt="<%= chamado.nome %>">
-                        <div class="card-body" style="height: 30%;">
-                            <h5 class="card-title">
-                                <%= chamado.nome %>
-                            </h5>
-                            <p class="card-text">
-                                <%= chamado.perfil %>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <% }); %>
+    <div class="container py-4">
+
+        <% if (mensagem) { %>
+            <div class="alert alert-success">
+                <%= mensagem %>
+            </div>
+        <% } %>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h1>Chamados de Suporte</h1>
+
+            <a href="/chamados/novo" class="btn btn-primary">
+                Novo chamado
+            </a>
+
         </div>
+
+        <% chamados.forEach(chamado => { %>
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        #<%= chamado.id %> - <%= chamado.erro %>
+                    </h5>
+
+                    <p class="card-text">
+                        <strong>Descrição:</strong>
+                        <%= chamado.descricao %>
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Status:</strong>
+                        <%= chamado.status %>
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Data:</strong>
+                        <%= chamado.data %>
+                    </p>
+
+                    <form
+                        action="/chamados/excluir/<%= chamado.id %>"
+                        method="POST">
+
+                        <button type="submit" class="btn btn-danger">
+                            Excluir
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        <% }); %>
+
     </div>
 
     <script src="/javascripts/bootstrap.min.js"></script>
+
 </body>
 
 </html>

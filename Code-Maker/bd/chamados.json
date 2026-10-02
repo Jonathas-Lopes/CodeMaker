@@ -1,19 +1,4 @@
-
-   [
-    {
-     "id": 1,
-    "erro": "Erro de conexão com o banco de dados",
-    "descricao": "O sistema não conseguiu se conectar ao banco de dados devido a uma falha de rede. Verifique a conexão e tente novamente.",
-    "status": "aberto",   
-    "data": "2026-10T10:12:00Z"
-  },
-  {
-   "id": 2,
-    "erro": "Erro de autenticação",
-    "descricao": "O usuário não conseguiu autenticar devido a credenciais inválidas. Verifique o nome de usuário e a senha.",
-    "status": "em andamento",
-    "data": "2026-10T11:10:00Z"
-  },
+[
   {
     "id": 3,
     "erro": "Erro de permissão",
@@ -28,4 +13,4 @@
     "status": "aberto",
     "data": "2026-10T13:30:00Z"
   }
-  ]
+]

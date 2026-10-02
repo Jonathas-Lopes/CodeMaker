@@ -1,0 +1,74 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Chamado</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container py-4">
+
+        <h1 class="mb-4">Novo Chamado</h1>
+
+        <form action="/chamados/salvar" method="POST">
+
+            <div class="mb-3">
+                <label for="erro" class="form-label">Erro</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="erro"
+                    name="erro"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea
+                    class="form-control"
+                    id="descricao"
+                    name="descricao"
+                    rows="4"
+                    required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status" required>
+                    <option value="">Selecione</option>
+                    <option value="aberto">Aberto</option>
+                    <option value="em andamento">Em andamento</option>
+                    <option value="resolvido">Resolvido</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="data" class="form-label">Data</label>
+                <input
+                    type="datetime-local"
+                    class="form-control"
+                    id="data"
+                    name="data"
+                    required>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Salvar chamado
+            </button>
+
+            <a href="/chamados" class="btn btn-secondary">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+</body>
+
+</html>
