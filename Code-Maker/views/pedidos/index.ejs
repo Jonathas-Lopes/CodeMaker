@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="container mt-5">
 
         <h1>Pedidos de Compra</h1>
@@ -41,6 +43,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Imagem</th>
                     <th>Produto</th>
                     <th>Quantidade</th>
                     <th>Valor</th>
@@ -50,12 +53,29 @@
             </thead>
 
             <tbody>
+
                 <% pedidos.forEach(function(pedido) { %>
+
                     <tr>
                         <td><%= pedido.id %></td>
+
+                        <td>
+                            <img
+                                src="<%= pedido.imagem || '/imagens/sem-imagem.png' %>"
+                                alt="<%= pedido.produto %>"
+                                width="70"
+                                height="70"
+                                style="object-fit: cover; border-radius: 8px;"
+                            >
+                        </td>
+
                         <td><%= pedido.produto %></td>
+
                         <td><%= pedido.quantidade %></td>
-                        <td>R$ <%= Number(pedido.valor).toFixed(2) %></td>
+
+                        <td>
+                            R$ <%= Number(pedido.valor).toFixed(2) %>
+                        </td>
 
                         <td>
                             R$ <%= (Number(pedido.valor) * Number(pedido.quantidade)).toFixed(2) %>
@@ -63,17 +83,22 @@
 
                         <td>
                             <form method="POST" action="/pedidos/excluir/<%= pedido.id %>">
+
                                 <button type="submit" class="btn btn-danger btn-sm">
                                     Excluir
                                 </button>
+
                             </form>
                         </td>
                     </tr>
+
                 <% }) %>
+
             </tbody>
 
         </table>
 
     </div>
+
 </body>
 </html>

@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "produto": "notebook",
+    "quantidade": 5,
+    "valor": 52,
+    "imagem": "/imagens/sem-imagem.png"
+  }
+]

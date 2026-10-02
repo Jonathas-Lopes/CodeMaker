@@ -44,7 +44,8 @@ exports.salvar = async (req, res) => {
                 : 1,
             produto: req.body.produto,
             quantidade: Number(req.body.quantidade),
-            valor: Number(req.body.valor)
+            valor: Number(req.body.valor),
+            imagem: req.body.imagem || '/imagens/sem-imagem.png'
         };
 
         pedidos.push(novoPedido);
