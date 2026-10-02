@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "pedidoId": "Pedido-2",
+    "pedidoId": "Pedido-3",
     "produto": "Teclado mecânico",
     "quantidade": 1,
     "subtotal": 349.9,
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "pedidoId": "Pedido-3",
+    "pedidoId": "Pedido-4",
     "produto": "Fone de Ouvido",
     "quantidade": 1,
     "subtotal": 109.9,
