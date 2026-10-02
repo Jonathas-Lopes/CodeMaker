@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "codigo": "DESCONTO10",
+    "descricao": "10% de desconto",
+    "valor": 10,
+    "status": "ativo"
+  },
+  {
+    "id": 2,
+    "codigo": "BEMVINDO20",
+    "descricao": "20% de desconto",
+    "valor": 20,
+    "status": "ativo"
+  },
+  {
+    "id": 3,
+    "codigo": "PRIMEIRA15",
+    "descricao": "15% de desconto",
+    "valor": 15,
+    "status": "inativo"
+  }
+]

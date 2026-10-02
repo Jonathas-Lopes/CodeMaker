@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cupons de Desconto</title>
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .topo {
+            background: #17263a;
+            color: white;
+            padding: 25px 0;
+            margin-bottom: 35px;
+        }
+
+        .topo h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .topo p {
+            margin: 5px 0 0;
+            opacity: 0.8;
+        }
+
+        .cupom-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: 0.2s;
+            height: 100%;
+        }
+
+        .cupom-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .cupom-topo {
+            background: #ff7600;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .codigo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .desconto {
+            font-size: 38px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .cupom-corpo {
+            padding: 25px;
+        }
+
+        .descricao {
+            color: #555;
+            min-height: 45px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            background: #dff5e5;
+            color: #198754;
+        }
+
+        .rodape {
+            margin-top: 35px;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topo">
+        <div class="container">
+            <h1>Cupons de Desconto</h1>
+            <p>Gerencie os cupons disponíveis no sistema</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3>Cupons cadastrados</h3>
+
+            
+        </div>
+
+        <div class="row">
+
+            <% cupons.forEach(cupom => { %>
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="cupom-card">
+
+                        <div class="cupom-topo">
+
+                            <div class="codigo">
+                                <%= cupom.codigo %>
+                            </div>
+
+                            <div class="desconto">
+                                <%= cupom.valor %>%
+                            </div>
+
+                        </div>
+
+                        <div class="cupom-corpo">
+
+                            <h5>Descrição</h5>
+
+                            <p class="descricao">
+                                <%= cupom.descricao %>
+                            </p>
+
+                            <p>
+                                <strong>Status:</strong>
+                                <span class="status">
+                                    <%= cupom.status %>
+                                </span>
+                            </p>
+
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <% }); %>
+
+        </div>
+
+    </div>
+
+    <div class="rodape">
+        Sistema de Cupons de Desconto
+    </div>
+
+</body>
+
+</html>
