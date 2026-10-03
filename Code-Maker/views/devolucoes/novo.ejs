@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Troca ou Devolução</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container py-4" style="max-width: 640px;">
+        <h1 class="h3 mb-3">Nova solicitação de troca ou devolução</h1>
+
+        <% if (erro) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= erro %>
+            </div>
+        <% } %>
+
+        <form action="/devolucoes/salvar" method="POST">
+            <div class="mb-3">
+                <label for="pedido" class="form-label">Número do pedido</label>
+                <input type="text" class="form-control" id="pedido" name="pedido" value="<%= dados.pedido || '' %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Cliente</label>
+                <input type="text" class="form-control" id="cliente" name="cliente" value="<%= dados.cliente || '' %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="produto" class="form-label">Produto</label>
+                <input type="text" class="form-control" id="produto" name="produto" value="<%= dados.produto || '' %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <select class="form-select" id="tipo" name="tipo" required>
+                    <option value="">Selecione...</option>
+                    <option value="Troca" <%= dados.tipo === 'Troca' ? 'selected' : '' %>>Troca</option>
+                    <option value="Devolução" <%= dados.tipo === 'Devolução' ? 'selected' : '' %>>Devolução</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="motivo" class="form-label">Motivo</label>
+                <textarea class="form-control" id="motivo" name="motivo" rows="4" required><%= dados.motivo || '' %></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="/devolucoes" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+
+</html>

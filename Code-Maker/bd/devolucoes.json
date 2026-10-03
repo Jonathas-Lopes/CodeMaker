@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "pedido": "1042",
+    "cliente": "Ana Clara Souza",
+    "produto": "Teclado Mecânico RGB",
+    "tipo": "Troca",
+    "motivo": "Produto chegou com uma tecla com defeito.",
+    "status": "Em análise",
+    "data": "2026-09-22"
+  },
+  {
+    "id": 2,
+    "pedido": "1057",
+    "cliente": "Bruno Ribeiro Mendes",
+    "produto": "Mouse Sem Fio",
+    "tipo": "Devolução",
+    "motivo": "Arrependimento da compra dentro do prazo de 7 dias.",
+    "status": "Aprovada",
+    "data": "2026-09-25"
+  },
+  {
+    "id": 3,
+    "pedido": "1063",
+    "cliente": "Carla Peixoto",
+    "produto": "Headset Gamer",
+    "tipo": "Troca",
+    "motivo": "Cor recebida diferente da que foi escolhida no pedido.",
+    "status": "Concluída",
+    "data": "2026-09-28"
+  }
+]
